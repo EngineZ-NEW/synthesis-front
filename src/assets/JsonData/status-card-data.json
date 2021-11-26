@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "bx bx-droplet",
+        "count": "6,3",
+        "title": "Humidity, pH"
+    },
+    {
+        "icon": "bx bxs-thermometer",
+        "count": "18,9",
+        "title": "Temperature, °C"
+    },
+    {
+        "icon": "bx bx-bulb",
+        "count": "43,850",
+        "title": "Luminosity, lux"
+    },
+    {
+        "icon": "bx bx-calendar",
+        "count": "21",
+        "title": "Days since planting"
+    }
+]
