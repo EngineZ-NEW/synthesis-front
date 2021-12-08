@@ -8,8 +8,7 @@ function RequireAuth({children}) {
 
     if (!auth) {
         return <Navigate to='/login' state={{from: location }}/>
-}
-
+    }
     return children;
 }
 
