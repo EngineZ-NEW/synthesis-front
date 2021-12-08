@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import {RequireAuth} from "./hoc/RequireAuth";
 import {useAuth} from "./hooks/useAuth";
 import {ForbidAuth} from "./hoc/ForbidAuth";
+import Loader from "./components/loader/loader";
 
 function App() {
     const {checkAuth, isLoading} = useAuth();
@@ -18,7 +19,7 @@ function App() {
     }, [])
 
     if (isLoading) {
-        return <h1>Loading...</h1>
+        return <Loader/>
     }
 
     return (
