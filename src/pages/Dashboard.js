@@ -5,6 +5,7 @@ import StatusCard from "../components/status-card/StatusCard";
 import statusCards from '../assets/JsonData/status-card-data.json'
 import Table from "../components/table/Table";
 import Badge from "../components/badge/Badge";
+import {useAuth} from "../hooks/useAuth";
 
 const chartOptions = {
     series: [{
@@ -186,10 +187,14 @@ const renderOrderBody = (item, index) => (
 )
 
 const Dashboard = () => {
+    //delete
+    const {logout} = useAuth();
     return (
         <div>
             <div className="header-container">
                 <h2 className="page-header">Dashboard</h2>
+                {/*delete*/}
+                <button onClick={() => logout()}>Log out</button>
                 <h4 className="additional-text">Last sync: {datetime}</h4>
             </div>
             <div className="row">
