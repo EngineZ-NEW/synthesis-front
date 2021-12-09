@@ -1,21 +1,71 @@
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  margin: 0 auto;
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+*:focus {
+  outline: none;
 }
-label {
-  font-size: 1.5rem;
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0.25turn,#e66465, #9198e5);
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+.form div{
+  margin-bottom: 0;
+}
+.page {
+  width: 500px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 0.5rem;
+}
+.login-text{
+  width: 100%;
+}
+.page label{
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
   width: 100%;
 }
 
-input {
-  padding: 1rem;
-  font-size: 1.5rem;
+.page input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.page input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #165ba0;
+  color: #8016a0;
+  transition: 0.2s ease;
 }
 
 .form-element {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -25,16 +75,27 @@ p {
   color: red;
 }
 
-button {
-  padding: 1rem;
-  font-size: 1.5rem;
-  background-color: #349eff;
-  color: #fff;
+.page button {
+  background: linear-gradient(0.25turn,#e66465, #9198e5);
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
   border: none;
-  border-radius: 8px;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
   cursor: pointer;
 }
 
-button:hover{
-  background-color: #9400d3;
+.page button :hover,
+button:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+.page button:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
 }
