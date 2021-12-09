@@ -17,7 +17,8 @@ const chartOptions = {
     options: {
         colors: ['#6f00ff', '#9400d3'],
         chart: {
-            background: 'transparent'
+            background: 'transparent',
+            foreColor: 'var(--txt-color)'
         },
         dataLabels: {
             enabled: false
