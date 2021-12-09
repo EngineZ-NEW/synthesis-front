@@ -10,7 +10,7 @@ export const AuthProvider = ({children}) => {
     const [isAuth, setIsAuth] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const login = async (email, password, cb) => {
+    const login = async (email, password, cb, setErrorMessage) => {
         try {
             const response = await AuthService.login(email, password);
             console.log(response)
@@ -20,10 +20,11 @@ export const AuthProvider = ({children}) => {
             cb();
         } catch (e) {
             console.log(e.response?.data?.message);
+            if(setErrorMessage) setErrorMessage(e.response?.data?.message);
         }
     }
 
-    const registration = async (email, password, cb) => {
+    const registration = async (email, password, cb, setErrorMessage) => {
         try {
             const response = await AuthService.registration(email, password);
             console.log(response)
@@ -33,6 +34,7 @@ export const AuthProvider = ({children}) => {
             cb();
         } catch (e) {
             console.log(e.response?.data?.message);
+            if(setErrorMessage) setErrorMessage(e.response?.data?.message);
         }
     }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {useAuth} from "../../hooks/useAuth";
 import useInput from "../../hooks/useInput";
@@ -12,7 +12,8 @@ function Login() {
     const location = useLocation();
     const {login} = useAuth();
     const themeReducer = useSelector(state => state.ThemeReducer)
-    
+
+    const [errorMessage, setErrorMessage] = useState('')
     const email = useInput('')
     const password = useInput('')
 
@@ -20,7 +21,8 @@ function Login() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        login(email.value, password.value, () => navigate(fromPage, {replace: true}))
+        login(email.value, password.value, () => navigate(fromPage, {replace: true}), setErrorMessage)
+
     }
 
 return (
@@ -37,9 +39,10 @@ return (
                 <div className="login-card__field">
                     <input type="password" name="password" placeholder="Password" {...password}/>
                 </div>
+                <p className="login-card__error-message">{errorMessage}</p>
                 <button type="submit" className="login-card__submit">Sign In</button>
             </form>
-            <p>Don't have an account? <span className="login-card__create-one"><Link to="/">Create one</Link></span></p>
+            <p>Don't have an account? <span className="login-card__create-one"><Link to="/register">Create one</Link></span></p>
         </div>
     </div>
     );

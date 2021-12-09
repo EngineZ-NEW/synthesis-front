@@ -8,6 +8,7 @@ import {RequireAuth} from "./hoc/RequireAuth";
 import {useAuth} from "./hooks/useAuth";
 import {ForbidAuth} from "./hoc/ForbidAuth";
 import Loader from "./components/loader/loader";
+import Register from "./pages/register/Register";
 
 function App() {
     const {checkAuth, isLoading} = useAuth();
@@ -31,6 +32,7 @@ function App() {
                             <Route path="activity" element={<RequireAuth> <Activity/> </RequireAuth>} />
                             <Route path="*" element={<h1>404</h1>} />
                             <Route path="login" element={<ForbidAuth> <Login /> </ForbidAuth>} />
+                            <Route path="register" element={<ForbidAuth> <Register/> </ForbidAuth>} />
                         </Route>
                     </Routes>
             </BrowserRouter>

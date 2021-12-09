@@ -8,8 +8,8 @@
 }
 
 .login-card {
-    max-width: 380px;
-    max-height: 650px;
+    max-width: 450px;
+    height: 550px;
     padding: 300px 32px;
     display: flex;
     flex-direction: column;
@@ -131,10 +131,4 @@ select:-webkit-autofill:focus {
 
 .login-card__create-one {
     color: var(--main-color);
-}
-
-.login-card__error-message {
-    padding-left: 16px;
-    color: var(--error-color);
-    overflow: hidden;
 }
