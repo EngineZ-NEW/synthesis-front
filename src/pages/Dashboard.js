@@ -193,8 +193,6 @@ const Dashboard = () => {
         <div>
             <div className="header-container">
                 <h2 className="page-header">Dashboard</h2>
-                {/*delete*/}
-                <button onClick={() => logout()}>Log out</button>
                 <h4 className="additional-text">Last sync: {datetime}</h4>
             </div>
             <div className="row">
