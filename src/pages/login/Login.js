@@ -4,11 +4,14 @@ import {useAuth} from "../../hooks/useAuth";
 import useInput from "../../hooks/useInput";
 import "./login.css"
 import logo from "../../assets/images/logo.png";
+import logo_white from "../../assets/images/logo_white.png";
+import {useSelector} from "react-redux";
 
 function Login() {
     const navigate = useNavigate();
     const location = useLocation();
     const {login} = useAuth();
+    const themeReducer = useSelector(state => state.ThemeReducer)
     
     const email = useInput('')
     const password = useInput('')
@@ -24,7 +27,7 @@ return (
     <div className="login-container">
         <div className="login-card">
             <div className="login-card__logo">
-                <img src={logo} alt="product logo"/>
+                <img src={themeReducer.mode === 'theme-mode-light' ? logo : logo_white} alt="product logo"/>
                 <h1 className="login-card__logo-title">Synthesis</h1>
             </div>
             <form onSubmit={handleSubmit}>
