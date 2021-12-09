@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Dashboard from "./pages/Dashboard";
 import Activity from "./pages/Activity";
-import Login from "./pages/Login";
+import Login from "./pages/login/Login";
 import {RequireAuth} from "./hoc/RequireAuth";
 import {useAuth} from "./hooks/useAuth";
 import {ForbidAuth} from "./hoc/ForbidAuth";

@@ -36,14 +36,12 @@ export const AuthProvider = ({children}) => {
         }
     }
 
-    const logout = async (cb) => {
+    const logout = async () => {
         try {
             const response = await AuthService.logout();
             localStorage.removeItem('token');
             setIsAuth(false);
             setUser({});
-            console.log('LOGGED OUT')
-            cb();
         } catch (e) {
             console.log(e.response?.data?.message);
         }
