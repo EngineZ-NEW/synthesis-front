@@ -39,7 +39,7 @@ return (
                 </div>
                 <button type="submit" className="login-card__submit">Sign In</button>
             </form>
-            <p>Don't have an account? <Link to="/">Create one</Link></p>
+            <p>Don't have an account? <span className="login-card__create-one"><Link to="/">Create one</Link></span></p>
         </div>
     </div>
     );

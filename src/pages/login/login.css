@@ -120,10 +120,15 @@ select:-webkit-autofill:focus {
 }
 
 .login-card__logo-title {
+    letter-spacing: 4px;
     margin-top: 16px;
     font-size: 3em;
     text-transform: uppercase;
     background: -webkit-linear-gradient(-45deg, var(--main-color), #9f69fe, var(--second-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.login-card__create-one {
+    color: var(--main-color);
 }
