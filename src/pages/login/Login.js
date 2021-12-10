@@ -34,7 +34,7 @@ return (
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="login-card__field">
-                    <input type="text" name="email" placeholder="Email" {...email}/>
+                    <input type="text" name="email" placeholder="Email" {...email} autoComplete="off"/>
                 </div>
                 <div className="login-card__field">
                     <input type="password" name="password" placeholder="Password" {...password}/>

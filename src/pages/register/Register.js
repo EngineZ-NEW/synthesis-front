@@ -20,11 +20,10 @@ function Register() {
     const handleSubmit = event => {
         event.preventDefault();
         if(password.value === confirmPassword.value) {
-            registration(email.value, password.value, () => navigate('/login'), setErrorMessage)
+            registration(email.value, password.value, () => navigate('/'), setErrorMessage)
         } else {
             setErrorMessage('Passwords don\'t match')
         }
-
     }
 
     return (
@@ -36,7 +35,7 @@ function Register() {
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className="login-card__field">
-                        <input type="text" name="email" placeholder="Email" {...email}/>
+                        <input type="text" name="email" placeholder="Email" {...email} autoComplete="off"/>
                     </div>
                     <div className="login-card__field">
                         <input type="password" name="password" placeholder="Password" {...password}/>
