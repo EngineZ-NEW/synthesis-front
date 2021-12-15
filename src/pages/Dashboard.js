@@ -17,7 +17,8 @@ const chartOptions = {
     options: {
         colors: ['#6f00ff', '#9400d3'],
         chart: {
-            background: 'transparent'
+            background: 'transparent',
+            foreColor: 'var(--txt-color)'
         },
         dataLabels: {
             enabled: false
@@ -92,6 +93,11 @@ const currentStatus = {
     ]
 }
 
+const connectionStatus = {
+    "Good": "success",
+    "No": "danger"
+}
+
 const renderStatusHead = (item, index) => (
     <th key={index}>{item}</th>
 )
@@ -100,7 +106,9 @@ const renderStatusBody = (item, index) => (
     <tr key={index}>
         <td>{item.hardware}</td>
         <td>{item.status}</td>
-        <td>{item.connection}</td>
+        <td>
+            <Badge type={connectionStatus[item.connection]} content={item.connection} />
+        </td>
     </tr>
 )
 

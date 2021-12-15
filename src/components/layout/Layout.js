@@ -4,15 +4,16 @@ import './layout.css'
 
 import Sidebar from '../sidebar/Sidebar'
 import TopNav from '../topnav/TopNav'
-import Routes from '../Routes'
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import {Outlet, useLocation} from 'react-router-dom'
 
 import { useSelector, useDispatch } from 'react-redux'
 
 import ThemeAction from '../../redux/actions/ThemeAction'
 
 const Layout = () => {
+
+    const location = useLocation();
 
     const themeReducer = useSelector(state => state.ThemeReducer)
 
@@ -23,21 +24,27 @@ const Layout = () => {
         dispatch(ThemeAction.setMode(themeClass))
     }, [dispatch])
 
-    return (
-        <BrowserRouter>
-            <Route render={(props) => (
-                <div className={`layout ${themeReducer.mode}`}>
-                    <Sidebar {...props}/>
-                    <div className="layout__content">
-                        <TopNav/>
-                        <div className="layout__content-main">
-                            <Routes/>
-                        </div>
+    if (localStorage.getItem("token")) {
+        return (
+            <div className={`layout ${themeReducer.mode}`}>
+                <Sidebar
+                    location={location}
+                />
+                <div className="layout__content">
+                    <TopNav/>
+                    <div className="layout__content-main">
+                        <Outlet/>
                     </div>
                 </div>
-            )}/>
-        </BrowserRouter>
-    )
+            </div>
+        )
+    } else {
+        return (
+            <div className={`layout ${themeReducer.mode}`}>
+                <Outlet/>
+            </div>
+        )
+    }
 }
 
 export default Layout
