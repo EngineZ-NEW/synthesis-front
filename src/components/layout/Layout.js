@@ -24,7 +24,7 @@ const Layout = () => {
         dispatch(ThemeAction.setMode(themeClass))
     }, [dispatch])
 
-    if (localStorage.getItem("token")) {
+    // if (localStorage.getItem("token")) {
         return (
             <div className={`layout ${themeReducer.mode}`}>
                 <Sidebar
@@ -38,13 +38,13 @@ const Layout = () => {
                 </div>
             </div>
         )
-    } else {
-        return (
-            <div className={`layout ${themeReducer.mode}`}>
-                <Outlet/>
-            </div>
-        )
+    // } else {
+    //     return (
+    //         <div className={`layout ${themeReducer.mode}`}>
+    //             <Outlet/>
+    //         </div>
+    //     )
     }
-}
+// }
 
 export default Layout
